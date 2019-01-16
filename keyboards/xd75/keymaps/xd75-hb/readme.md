@@ -1,1 +1,1 @@
-# The default keymap for xd75
+# The keymap for xd75 hb
