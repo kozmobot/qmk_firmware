@@ -44,20 +44,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
  * | TAB    | Q      | W      | E      | R      | T      | UNCO   | F9     | COMM   | Y      | U      | I      | O      | P      | \      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * | =      | A      | S      | D      | F      | G      | TIDY   | MAIL   | SEAR   | H      | J      | K      | L      | ;      | '      |
+ * | BSPC   | A      | S      | D      | F      | G      | TIDY   | MAIL   | SEAR   | H      | J      | K      | L      | ;      | '      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
  * | LSPO   | Z      | X      | C      | V      | B      | HOME   | UP     | END    | N      | M      | ,      | .      | /      | RSPC   |
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+--------+--------+--------+--------|
- * | LCTL   | LGUI   | LOCK   | LALT   | FN     | SPACE  | LEFT   | DOWN   | RGHT   | BSPC   | ENT    | DEL    | F7     | F12    | RCTL   |
+ * | LCTL   | LGUI   | LALT   | DEL    | FN     | SPACE  | LEFT   | DOWN   | RGHT   | =      | ENT    | F7     | F12    | LOCK   | RCTL   |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
  [_QW] = { /* QWERTY */
-  { KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_F10,  KC_F5,   S_STOP,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS },
-  { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    M_UNCO,  KC_F9,   M_COMM,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS },
-  { KC_EQL,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    M_TIDY,  M_MAIL,  M_SEAR,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT },
-  { KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_HOME, KC_UP,   KC_END,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC },
-  { KC_LCTL, KC_LGUI, S_LOCK,  KC_LALT, MO(_FN), KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC, KC_ENT,  KC_DEL,  KC_F7,   KC_F12,  KC_RCTL },
+  { KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_F10,  KC_F5,   S_STOP,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, },
+  { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    M_UNCO,  KC_F9,   M_COMM,  KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, },
+  { KC_BSPC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    M_TIDY,  M_MAIL,  M_SEAR,  KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, },
+  { KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_HOME, KC_UP,   KC_END,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC, },
+  { KC_LCTL, KC_LGUI, KC_LALT, KC_DEL,  MO(_FN), KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_EQL,  KC_ENT,  KC_F7,   KC_F12,  S_LOCK,  KC_RCTL, },
  },
 
 /* FUNCTION
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
  * |        | VOL-   | MUTE   | VOL+   | APP    |        |        |        |        |        |        | <      | >      |        |        |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * | PSCR   |        |        |        |        |        |        |        |        |        |        |        |        |        | CAD    |
+ * | PSCR   |        |        |        |        |        |        |        |        |        |        |        |        | CAD    | CAD    |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { KC_GRV,  KC_MSEL, KC_CALC, KC_MYCM, KC_MAIL, _______, RGB_HUI, RGB_SAI, RGB_VAI, _______, _______, KC_LBRC, KC_RBRC, _______, _______ },
   { KC_CAPS, KC_MPRV, KC_MPLY, KC_MNXT, KC_MSTP, _______, RGB_HUD, RGB_SAD, RGB_VAD, _______, _______, KC_LCBR, KC_RCBR, _______, _______ },
   { _______, KC_VOLD, KC_MUTE, KC_VOLU, KC_APP,  _______, RGB_TOG, RGB_MOD, RGB_RMOD,_______, _______, KC_LT,   KC_GT,   _______, _______ },
-  { KC_PSCR, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, S_CAD   },
+  { KC_PSCR, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, S_CAD,   S_CAD   },
  }
 };
 
@@ -105,19 +105,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch(keycode) {
             case M_MAIL:
-                SEND_STRING("stop saying pickle rick!"); 
+                SEND_STRING("stop saying pickle rick!");
                 return false; break;
             case M_TIDY:
-                SEND_STRING(SS_LCTRL("k")SS_LCTRL("f")); 
+                SEND_STRING(SS_LCTRL("k")SS_LCTRL("f"));
                 return false; break;
             case M_SEAR:
-                SEND_STRING(SS_LCTRL(SS_LSFT("f"))); 
+                SEND_STRING(SS_LCTRL(SS_LSFT("f")));
                 return false; break;
             case M_COMM:
-                SEND_STRING(SS_LCTRL("k")SS_LCTRL("c")); 
+                SEND_STRING(SS_LCTRL("k")SS_LCTRL("c"));
                 return false; break;
             case M_UNCO:
-                SEND_STRING(SS_LCTRL("k")SS_LCTRL("u")); 
+                SEND_STRING(SS_LCTRL("k")SS_LCTRL("u"));
                 return false; break;
         }
     }
